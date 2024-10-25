@@ -1,0 +1,91 @@
+html {
+    color-scheme: dark;
+}
+
+
+body {
+    color: #eee;
+    font-size: 1.125rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.7;
+}
+
+.wrapper {
+    width: min(900px, 100%-3rem);
+    margin-inline: auto;
+}
+
+table {
+    /* background: #fff; */
+    /* display: table; */
+    border-collapse: collapse;
+    background: #323232;
+    width: 100%;
+
+}
+
+
+
+
+caption,
+th,
+td {
+    /* background: #fff; */
+    padding: 1rem;
+}
+
+caption,
+th {
+    text-align: left;
+}
+
+
+
+
+caption {
+    background: hsl(0, 0%, 0%);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+
+th {
+    background: hsl(0 0% 0% / .5);
+}
+
+
+tbody tr:nth-child(even) {
+    background: hsl(0 0% 0% / .1);
+}
+
+@media (max-width: 700px) {
+
+    tr th {
+        display: none;
+    }
+
+    tr td {
+        /* display: block; */
+        display: grid;
+        /* grid-template-columns: 1fr 1fr; */
+        gap: .5rem;
+        grid-template-columns: 8ch auto;
+        padding: 0.5rem 1rem;
+    }
+
+    tr td:first-child {
+        padding-top: 2rem;
+    }
+
+    tr td:last-child {
+        padding-bottom: 2rem;
+    }
+
+    tbody tr td::before {
+        content: attr(data-cell) ": ";
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+
+}
